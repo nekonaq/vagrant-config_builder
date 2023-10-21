@@ -1,4 +1,3 @@
 module ConfigBuilder
-  # VERSION = '1.3.0.post1'
-  VERSION = '1.3.0post1'
+  VERSION = '1.3.0.2310.1'
 end

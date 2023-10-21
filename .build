@@ -3,6 +3,7 @@ set -e
 
 main() {
   export PATH=/opt/vagrant/embedded/bin:$PATH
+  set -x
   gem build vagrant-config_builder.gemspec
 }
 
