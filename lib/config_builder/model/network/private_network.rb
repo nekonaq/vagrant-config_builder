@@ -25,7 +25,7 @@ class ConfigBuilder::Model::Network::PrivateNetwork < ConfigBuilder::Model::Base
       # vagrant-auto_network plugin.
       # FIXME: Re-factor attribute handling so that this sort of magic isn't
       # necessary.
-      vm_config.network(:private_network, @attrs)
+      vm_config.network(:private_network, **@attrs)
     end
   end
 end

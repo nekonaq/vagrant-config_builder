@@ -40,7 +40,7 @@ class ConfigBuilder::Model::Network::ForwardedPort < ConfigBuilder::Model::Base
 
   def to_proc
     Proc.new do |vm_config|
-      vm_config.network(:forwarded_port, forwarded_port_opts)
+      vm_config.network(:forwarded_port, **forwarded_port_opts)
     end
   end
 

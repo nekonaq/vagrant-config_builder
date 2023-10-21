@@ -24,7 +24,7 @@ class ConfigBuilder::Model::Network::PublicNetwork < ConfigBuilder::Model::Base
 
   def to_proc
     Proc.new do |vm_config|
-      vm_config.network(:public_network, public_network_opts)
+      vm_config.network(:public_network, **public_network_opts)
     end
   end
 

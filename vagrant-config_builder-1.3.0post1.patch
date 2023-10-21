@@ -1,0 +1,35 @@
+diff -uNr vagrant-config_builder-1.3.0.orig/lib/config_builder/model/network/forwarded_port.rb vagrant-config_builder-1.3.0/lib/config_builder/model/network/forwarded_port.rb
+--- vagrant-config_builder-1.3.0.orig/lib/config_builder/model/network/forwarded_port.rb	2023-07-15 08:16:49.327530010 +0900
++++ vagrant-config_builder-1.3.0/lib/config_builder/model/network/forwarded_port.rb	2023-07-21 13:05:09.115253451 +0900
+@@ -40,7 +40,7 @@
+ 
+   def to_proc
+     Proc.new do |vm_config|
+-      vm_config.network(:forwarded_port, forwarded_port_opts)
++      vm_config.network(:forwarded_port, **forwarded_port_opts)
+     end
+   end
+ 
+diff -uNr vagrant-config_builder-1.3.0.orig/lib/config_builder/model/network/private_network.rb vagrant-config_builder-1.3.0/lib/config_builder/model/network/private_network.rb
+--- vagrant-config_builder-1.3.0.orig/lib/config_builder/model/network/private_network.rb	2023-07-15 08:16:49.327530010 +0900
++++ vagrant-config_builder-1.3.0/lib/config_builder/model/network/private_network.rb	2023-07-21 13:05:13.271276370 +0900
+@@ -25,7 +25,7 @@
+       # vagrant-auto_network plugin.
+       # FIXME: Re-factor attribute handling so that this sort of magic isn't
+       # necessary.
+-      vm_config.network(:private_network, @attrs)
++      vm_config.network(:private_network, **@attrs)
+     end
+   end
+ end
+diff -uNr vagrant-config_builder-1.3.0.orig/lib/config_builder/model/network/public_network.rb vagrant-config_builder-1.3.0/lib/config_builder/model/network/public_network.rb
+--- vagrant-config_builder-1.3.0.orig/lib/config_builder/model/network/public_network.rb	2023-07-15 08:16:49.327530010 +0900
++++ vagrant-config_builder-1.3.0/lib/config_builder/model/network/public_network.rb	2023-07-21 13:05:17.351298610 +0900
+@@ -24,6 +24,6 @@
+ 
+   def to_proc
+     Proc.new do |vm_config|
+-      vm_config.network(:public_network, public_network_opts)
++      vm_config.network(:public_network, **public_network_opts)
+     end
+   end
